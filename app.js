@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // 计算接口请求时间
-app.use(require('./app/middleware/responseTime')())
+app.use(require('./app/middleware/responseTime')());
 
 const router = require('./routes/base');
 router(app);

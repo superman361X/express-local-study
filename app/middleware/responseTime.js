@@ -4,7 +4,7 @@
  */
 module.exports = () => {
   return (req, res, next) => {
-    global._startTime = new Date()
-    next()
-  }
+    global._startTime = new Date();
+    next();
+  };
 };

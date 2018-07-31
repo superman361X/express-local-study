@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
+const stime = require('./app/middleware/responseTime');
 
 const app = express();
 
@@ -18,7 +18,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // 计算接口请求时间
-app.use(require('./app/middleware/responseTime')());
+app.use(stime());
 
 const router = require('./routes/base');
 router(app);

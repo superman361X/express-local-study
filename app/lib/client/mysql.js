@@ -1,6 +1,6 @@
 //加载mysql模块
 const mysql = require('mysql');
-const config = require('../config/db').mysql;
+const config = require('../../../config/db').mysql;
 
 class Mysql {
   constructor() {

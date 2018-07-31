@@ -1,4 +1,4 @@
-const mysql = require('../../client/mysql');
+const mysql = require('../../../lib/client/mysql');
 
 class User {
 

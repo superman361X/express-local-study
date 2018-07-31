@@ -1,6 +1,6 @@
-const utils = require('../../utils/utils');
-const user = require('../../models/user/user');
-const http = require('../../client/http');
+const utils = require('../../../utils/utils');
+const user = require('../../../http/models/user/user');
+const http = require('../../../lib/client/http');
 
 class User {
 

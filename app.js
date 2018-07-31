@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const stime = require('./app/middleware/responseTime');
+const stime = require('./app/http/middleware/responseTime');
 
 const app = express();
 

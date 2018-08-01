@@ -18,10 +18,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
-var router = require('./routes/base');
-
 // app.use('/', indexRouter);
 // app.use('/users', usersRouter);
+
+var router = require('./routes/base');
 router(app);
 
 

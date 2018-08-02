@@ -1,10 +1,11 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
 
-var app = express();
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -16,14 +17,11 @@ app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
+// 计算接口请求时间
+app.use(require('./app/middleware/responseTime')())
 
-var router = require('./routes/base');
+const router = require('./routes/base');
 router(app);
-
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

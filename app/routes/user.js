@@ -17,4 +17,12 @@ router.get('/send2', user.sendMail2);
 
 router.post('/upload', user.upload);
 
+router.get('/async', (req, res) => {
+  setTimeout(() => {
+    res.send({key: 'key', val: 'val'});
+  }, 10000);
+
+  console.log('ko');
+});
+
 module.exports = router;

@@ -1,5 +1,5 @@
 //加载mysql模块
-const redis = require('clint/redis');
+const redis = require('app/client/redis');
 const config = require('../config/db').redis;
 
 class Redis {

@@ -40,4 +40,48 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
+
+{
+
+  let fs = require('fs');
+  let readFile = (fileName) => {
+    return new Promise((resolve, reject) => {
+      fs.readFile(fileName, (error, data) => {
+        if (error) {
+          reject(error);
+        }
+        else {
+          resolve(data);
+        }
+      });
+    });
+  };
+
+
+  readFile('./0.txt').then((f5) => {
+    console.log('f5 ' + f5.toString());
+  });
+
+  let asyncReadFile = async () => {
+    let f1 = await readFile('./0.txt');
+    let f2 = await readFile('./0.txt');
+    let f3 = await readFile('./0.txt');
+
+    console.log('f1 ' + f1.toString());
+    console.log('f2 ' + f2.toString());
+    console.log('f3 ' + f3.toString());
+  };
+
+  asyncReadFile();
+
+  readFile('./0.txt').then((f0) => {
+    console.log('f0 ' + f0.toString());
+  });
+
+  readFile('./0.txt').then((f4) => {
+    console.log('f4 ' + f4.toString());
+  });
+
+}
+
 module.exports = app;

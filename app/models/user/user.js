@@ -1,4 +1,4 @@
-const mysql = require('../../../lib/client/mysql');
+const mysql = require('../../lib/client/mysql');
 
 
 class User {
@@ -34,7 +34,7 @@ class User {
   send(mailOptions) {
     return new Promise((resolve, reject) => {
       let mailer = require('nodemailer');
-      let mailConfig = require('../../../../config/mail')["163"];
+      let mailConfig = require('../../../config/mail')["163"];
       mailer.createTransport(mailConfig).sendMail(mailOptions, (err, info) => {
         if (err) {
           reject(err);
@@ -46,7 +46,7 @@ class User {
 
   send2(mailOptions) {
     let mailer = require('nodemailer');
-    let mailConfig = require('../../../../config/mail')["163"];
+    let mailConfig = require('../../../config/mail')["163"];
     mailer.createTransport(mailConfig).sendMail(mailOptions, (err, info) => {
       if (err) {
         console.log(err);

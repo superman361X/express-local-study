@@ -21,7 +21,7 @@ app.use(express.static(path.join(__dirname, 'statics')));
 //app.use('/static', express.static('public'));
 
 // 计算接口请求时间
-app.use(require('./app/http/middleware/responseTime')());
+app.use(require('./app/middleware/responseTime')());
 
 //加载路由
 const router = require('./app/routes/base');

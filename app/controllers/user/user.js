@@ -1,6 +1,6 @@
-const utils = require('../../../utils/utils');
-const user = require('../../../http/models/user/user');
-const http = require('../../../lib/client/http');
+const utils = require('../../utils/utils');
+const user = require('../../models/user/user');
+const http = require('../../lib/client/http');
 
 class User {
 
@@ -9,9 +9,9 @@ class User {
   }
 
   async upload(req, res) {
-    let upload = require('../../../utils/upload');
+    let upload = require('../../utils/upload');
     let result = await new upload().doUpload(req);
-    let fileName = require('../../../../config/params').domain + '/uploads/' + result;
+    let fileName = require('../../../config/params').domain + '/uploads/' + result;
     res.send(utils.httpResponse(0, fileName, ''));
 
   }

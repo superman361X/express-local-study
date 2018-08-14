@@ -1,6 +1,6 @@
 const utils = require('../../utils/utils');
-const study = require('../../models/study/study');
-const http = require('../../client/http');
+const user = require('../../models/study/study');
+const http = require('../../lib/client/http');
 
 class Study {
   async index(req, res) {

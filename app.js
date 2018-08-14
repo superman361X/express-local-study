@@ -40,7 +40,7 @@ app.use((err, req, res, next) => {
   res.render('error');
 });
 
-
+/*
 {
 
   let fs = require('fs');
@@ -57,9 +57,28 @@ app.use((err, req, res, next) => {
     });
   };
 
+  let readFile2 = (fileName, callback) => {
+    fs.readFile(fileName, (error, data) => {
+      if (error) {
+        console.log(error);
+      }
+      else {
+        callback(data.toString());
+      }
+    });
+  };
+
+
+  readFile2('./0.txt', (f8) => {
+    console.log('f8 ' + f8.toString());
+  });
 
   readFile('./0.txt').then((f5) => {
     console.log('f5 ' + f5.toString());
+  });
+
+  readFile2('./0.txt', (f6) => {
+    console.log('f6 ' + f6.toString());
   });
 
   let asyncReadFile = async () => {
@@ -72,7 +91,13 @@ app.use((err, req, res, next) => {
     console.log('f3 ' + f3.toString());
   };
 
+
+  readFile('./0.txt').then((f7) => {
+    console.log('f7 ' + f7.toString());
+  });
+
   asyncReadFile();
+
 
   readFile('./0.txt').then((f0) => {
     console.log('f0 ' + f0.toString());
@@ -83,5 +108,39 @@ app.use((err, req, res, next) => {
   });
 
 }
+*/
 
+
+{
+
+  /**
+   * var 和 let 就有意思了，let声明的变量声明前使用也会报错，这个与const一致；最重要的一点是let声明了一个块级作用域的变量在一个块的“}”结束的时候，该变量消失。例子：
+   */
+
+    // (function (x, y) {
+    //   var b = x;
+    //   let c = y;
+    //   if (true) {
+    //     var b = 5;
+    //     let c = 6;
+    //     console.log(b);  //5
+    //     console.log(c);  //6，这里的let c在下一行的"}"之后消失
+    //   }
+    //   console.log(b);  //5
+    //   console.log(c);  //3 ，这里仍然是第三行的let c；
+    // }(2, 3));
+
+
+  // var a = 1;
+  // var b = 2;
+  // if (true) {
+  //   var a = 3;
+  //   let b = 4;
+  //   console.log(a);
+  //   console.log(b);
+  // }
+  //
+  // console.log(a);
+  // console.log(b);
+}
 module.exports = app;

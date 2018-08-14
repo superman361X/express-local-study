@@ -1,5 +1,5 @@
 const utils = require('../../utils/utils');
-const user = require('../../models/study/study');
+const study = require('../../models/study/study');
 const http = require('../../lib/client/http');
 
 class Study {
